@@ -1,0 +1,21 @@
+{
+	"name": "Excel1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "linkserviceblobstorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "2021 Jan-Feb All columns Air Co",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "ChristelleTest.xlsx",
+				"container": "testgitcontainer"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
