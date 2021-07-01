@@ -1,0 +1,24 @@
+{
+	"name": "dataflowtest",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"linkedService": {
+						"referenceName": "linkserviceblobstorage",
+						"type": "LinkedServiceReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "DerivedColumn1"
+				}
+			],
+			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tformat: 'excel',\n\tcontainer: 'testgitcontainer',\n\tfileName: 'ChristelleTest.xlsx',\n\tsheetName: '2021 Jan-Feb All columns Air Co',\n\tfirstRowAsHeader: true) ~> source1\nsource1 derive() ~> DerivedColumn1"
+		}
+	}
+}
